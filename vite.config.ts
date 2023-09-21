@@ -1,4 +1,3 @@
-/// <reference types="vitest" />
 
 import path from 'node:path'
 import { defineConfig } from 'vite'
@@ -28,9 +27,7 @@ export default defineConfig({
         }),
       },
     }),
-
     Pages(),
-
     AutoImport({
       imports: [
         'vue',
@@ -43,15 +40,10 @@ export default defineConfig({
       ],
       vueTemplate: true,
     }),
-
     Components({
       dts: true,
     }),
 
     UnoCSS(),
   ],
-
-  test: {
-    environment: 'jsdom',
-  },
 })

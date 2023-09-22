@@ -5,6 +5,7 @@ import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import UnoCSS from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 
@@ -33,6 +34,7 @@ export default defineConfig({
         'vue',
         'vue-router',
         '@vueuse/core',
+        'vue-i18n',
       ],
       dts: true,
       dirs: [
@@ -42,6 +44,12 @@ export default defineConfig({
     }),
     Components({
       dts: true,
+    }),
+    VueI18n({
+      runtimeOnly: true,
+      compositionOnly: true,
+      fullInstall: true,
+      include: [path.resolve(__dirname, './src/locales/**')],
     }),
 
     UnoCSS(),

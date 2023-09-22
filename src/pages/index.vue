@@ -1,10 +1,13 @@
+
 <script setup lang="ts" generic="T extends any, O extends any">
+import { loadLanguageAsync } from '~/utils/setI18nLanguage'
+
 defineOptions({
   name: 'IndexPage',
 })
 
 const name = ref('')
-
+const { t } = useI18n()
 const router = useRouter()
 function go() {
   if (name.value)
@@ -15,9 +18,12 @@ function go() {
 <template>
   <div>
     <div i-carbon-campsite inline-block text-4xl />
+    <div @click="loadLanguageAsync('zh-CN')">
+      loadLanguageAsync
+    </div>
     <p>
       <a rel="noreferrer" href="https://github.com/antfu/vitesse-lite" target="_blank">
-        Vitesse Lite
+        {{ t('button.about') }}
       </a>
     </p>
     <p>

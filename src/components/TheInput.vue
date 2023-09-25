@@ -1,7 +1,3 @@
-<script setup lang="ts">
-const modelValue = ref("");
-</script>
-
 <template>
   <input
     id="input"
@@ -16,3 +12,7 @@ const modelValue = ref("");
     outline="none active:none"
   />
 </template>
+
+<script setup lang="ts">
+  const modelValue = ref('');
+</script>

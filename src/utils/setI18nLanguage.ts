@@ -15,16 +15,17 @@ const localesMap = Object.fromEntries(
 
 export const availableLocales = Object.keys(localesMap)
 
-
 const loadedLanguages: string[] = []
 
 function setI18nLanguage(lang: Locale) {
+  // eslint-disable-next-line ts/no-unsafe-assignment
   i18n.global.locale.value = lang as any
   if (typeof document !== 'undefined')
     document.querySelector('html')?.setAttribute('lang', lang)
   return lang
 }
 
+// 设置多语言
 export async function loadLanguageAsync(lang: string): Promise<Locale> {
   if (i18n.global.locale.value === lang)
     return setI18nLanguage(lang)
@@ -38,7 +39,8 @@ export async function loadLanguageAsync(lang: string): Promise<Locale> {
   return setI18nLanguage(lang)
 }
 
-export function install(app: App) {
+export function installI18n(app: App) {
   app.use(i18n)
+  // eslint-disable-next-line ts/no-floating-promises
   loadLanguageAsync('en')
 }

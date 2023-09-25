@@ -1,16 +1,15 @@
-
 <script setup lang="ts" generic="T extends any, O extends any">
 import { loadLanguageAsync } from '~/utils/setI18nLanguage'
 
 defineOptions({
   name: 'IndexPage',
 })
-
 const name = ref('')
 const { t } = useI18n()
 const router = useRouter()
 function go() {
   if (name.value)
+    // eslint-disable-next-line ts/no-floating-promises
     router.push(`/hi/${encodeURIComponent(name.value)}`)
 }
 </script>

@@ -39,5 +39,10 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue}": "eslint --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@antfu"
+    ]
   }
 }

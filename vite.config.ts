@@ -37,6 +37,5 @@ export default defineConfig({
       fullInstall: true,
       include: [path.resolve(__dirname, './src/locales/**')],
     }),
-
   ],
 })

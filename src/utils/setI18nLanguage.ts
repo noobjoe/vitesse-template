@@ -18,7 +18,6 @@ export const availableLocales = Object.keys(localesMap)
 const loadedLanguages: string[] = []
 
 function setI18nLanguage(lang: Locale) {
-  // eslint-disable-next-line ts/no-unsafe-assignment
   i18n.global.locale.value = lang as any
   if (typeof document !== 'undefined')
     document.querySelector('html')?.setAttribute('lang', lang)

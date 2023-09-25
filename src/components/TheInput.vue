@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const modelValue = ref('')
+const modelValue = ref("");
 </script>
 
 <template>
@@ -14,5 +14,5 @@ const modelValue = ref('')
     bg="transparent"
     border="~ rounded gray-200 dark:gray-700"
     outline="none active:none"
-  >
+  />
 </template>

@@ -1,5 +1,3 @@
 <template>
-  <div>
-    Not Found
-  </div>
+  <van-signature />
 </template>
